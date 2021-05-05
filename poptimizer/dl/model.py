@@ -189,6 +189,7 @@ class Model:
     ) -> nn.Module:
         """Создает модель с не обученными весами."""
         model_type = getattr(models, self._phenotype["type"])
+        print(f"Вот оно че {self._phenotype}")
         model = model_type(loader.history_days, loader.features_description, **self._phenotype["model"])
 
         if verbose:
